@@ -1,0 +1,10 @@
+#heartIcon {
+    fill: rgba(222, 19, 19, 0.954);
+    cursor: pointer;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

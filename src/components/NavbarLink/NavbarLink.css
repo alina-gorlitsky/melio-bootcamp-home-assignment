@@ -1,1 +1,6 @@
-
+* {
+    cursor: pointer;
+}
+.active {
+    color: rgb(75, 16, 129);
+}

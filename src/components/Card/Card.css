@@ -1,0 +1,70 @@
+.card {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 15px 30px 15px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(212, 210, 210, 0.2);
+}
+
+.card:hover {
+    box-shadow: 3px 3px 3px 3px rgba(212, 210, 210, 0.3);
+}
+
+.candidateInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.fullNameAndBadge {
+    display: flex;
+    gap: 10px
+}
+
+.candidateImage {
+    border-radius: 50%;
+}
+
+.fullName {
+    display: flex;
+    gap: 5px;
+}
+
+.fullName span {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.email {
+    font-weight: 400;
+    color: grey;
+    font-size: 12px;
+}
+
+.location {
+    display: flex;
+    gap: 5px;
+}
+
+.location span {
+    font-weight: 400;
+    color: grey;
+    font-size: 12px;
+}
+
+.preferredBadge {
+    display: flex;
+    align-self: center;
+    background-color:rgb(75, 16, 129);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 0px 8px;
+}

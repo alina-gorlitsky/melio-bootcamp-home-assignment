@@ -7,6 +7,7 @@
 
 .home-title {
   display: flex;
+  align-items: left;
   font-size: 34px;
   font-weight: 700;
   margin-block-start: 50px;
@@ -14,9 +15,30 @@
 
 .home-subtitle {
   display: flex;
+  align-items: left;
   font-size: 14px;
 }
 
-.candidates-list{
+.candidates-list {
   margin-block-start: 30px;
+  width: 40%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 600px){
+.candidates-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 30px;
+  overflow-y: unset;
+  }
+}
+@media only screen and (max-width: 600px) {
+.home-headings div {
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  }
 }

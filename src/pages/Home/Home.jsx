@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
-import {fetchCandidates} from "../../utils/API.js";
-import {getPersistentCandidatesData} from "../../utils/helper.js";
-import {FavoriteIcon} from "../../components/FavoriteIcon/FavoriteIcon";
+import { fetchCandidates } from "../../utils/API.js";
+import {
+  candidatesToArray,
+  getPersistentCandidatesData,
+  transformCandidatesData
+} from "../../utils/helper.js";
+import { Card } from "../../components/Card/Card";
 
-/*
-  This is a "React component", you don't really need to know react in dept,
-*/
 export const Home = () => {
-
   // once you populated candidates variable with data
   // search online how to "render an array of items in react" and add your implementation below (line 41)
   // to update the candidates variable, you need to use setCandidatesFunction
@@ -27,27 +27,24 @@ export const Home = () => {
     if (data) {
       setCandidatesFunction(data);
     } else {
-
-      // replace the empty array once you implemented the fetching code with: await fetchCandidates()
       const fetchedData = await fetchCandidates();
-
-      // replace the empty array once the data is transformed
-      const transformedData = [];
+      const transformedData = transformCandidatesData(fetchedData);
 
       //this function will save a "React State" and allow you to use the data via candidates variable outside.
       setCandidatesFunction(transformedData);
     }
-  }
+  };
 
   return (
-    <div id="home">
-      <div className="home-title">Firm's candidates</div>
-      <div className="home-subtitle">write your Name</div>
-      <div className="candidates-list">
-
-        ADD YOUR CANDIDATES CARD LIST IMPLEMENTATION HERE,
-        USE candidates VARIABLE
-
+    <div id='home'>
+      <div className='home-headings'>
+        <div className='home-title'>Firm's candidates</div>
+        <div className='home-subtitle'>Alina Gorlitsky</div>
+      </div>
+      <div className='candidates-list'>
+        {candidatesToArray(candidates).map((candidate) => (
+          <Card key={candidate.uuid} candidate={candidate} />
+        ))}
       </div>
     </div>
   );
